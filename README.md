@@ -2,6 +2,8 @@
 
 A powerful yet simple screenshot tool for Linux with monitor selection, cropping capabilities, and project folder management.
 
+![Screenshot](screenshot.png)
+
 ![Python](https://img.shields.io/badge/python-3.8+-blue.svg)
 ![GTK](https://img.shields.io/badge/GTK-3.0-green.svg)
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
@@ -60,7 +62,7 @@ sudo pacman -S python-gobject gtk3
 
 ### Install from Source
 ```bash
-git clone https://github.com/yourusername/screenshot-crop.git
+git clone https://github.com/rjeffmyers/screenshot-crop.git
 cd screenshot-crop
 chmod +x screenshot-crop.py
 ./screenshot-crop.py
@@ -68,7 +70,7 @@ chmod +x screenshot-crop.py
 
 ### Install .deb Package (Ubuntu/Linux Mint)
 ```bash
-sudo dpkg -i screenshot-crop_1.0.0_all.deb
+sudo dpkg -i screenshot-crop_1.0.1_all.deb
 sudo apt-get install -f  # Install any missing dependencies
 ```
 
@@ -92,6 +94,7 @@ Perfect for creating documentation with multiple screenshots:
 4. All screenshots saved to the same project folder with meaningful names
 
 ### Tips
+- **Window Capture**: Use the delay feature, then quickly crop to the window you need
 - **Context Menus**: Use the delay feature to capture open menus and tooltips
 - **Quick Access**: Pin frequently used project folders using the dropdown
 - **Batch Screenshots**: Use "Continue" after each save for rapid documentation
@@ -154,6 +157,20 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
+
+## Changelog
+
+### Version 1.0.1 (2024)
+- Added Help/About dialog with GitHub repository link
+- Added keyboard shortcuts and usage tips in Help dialog
+- Minor UI improvements
+
+### Version 1.0.0
+- Initial release with multi-monitor support
+- Visual crop interface
+- Project folder management
+- Custom file naming
+- Persistent settings
 
 ## License
 

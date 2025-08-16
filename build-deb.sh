@@ -3,7 +3,7 @@
 # Build script for creating .deb package for Screenshot Crop Tool
 # Supports Ubuntu 24.04 and Linux Mint 22.1
 
-VERSION="1.0.0"
+VERSION="1.0.1"
 PACKAGE_NAME="screenshot-crop"
 ARCH="all"
 MAINTAINER="Screenshot Crop Tool Contributors"

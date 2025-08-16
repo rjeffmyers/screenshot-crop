@@ -125,6 +125,11 @@ class ScreenshotCropTool(Gtk.Window):
         button_box.set_margin_top(10)
         vbox.pack_end(button_box, False, False, 0)
         
+        # Help button
+        help_button = Gtk.Button(label="Help")
+        help_button.connect("clicked", self.show_help)
+        button_box.pack_start(help_button, False, False, 0)
+        
         # Cancel button
         self.cancel_button = Gtk.Button(label="Cancel")
         self.cancel_button.connect("clicked", self.on_cancel)
@@ -217,6 +222,50 @@ class ScreenshotCropTool(Gtk.Window):
         """Save config before closing"""
         self.save_config()
         Gtk.main_quit()
+    
+    def show_help(self, widget):
+        """Show help/about dialog"""
+        dialog = Gtk.AboutDialog()
+        dialog.set_transient_for(self)
+        dialog.set_program_name("Screenshot Crop Tool")
+        dialog.set_version("1.0.1")
+        dialog.set_copyright("© 2024 Screenshot Crop Tool Contributors")
+        dialog.set_license_type(Gtk.License.MIT_X11)
+        dialog.set_website("https://github.com/rjeffmyers/screenshot-crop")
+        dialog.set_website_label("GitHub Repository")
+        dialog.set_comments("A powerful screenshot tool for Linux with monitor selection,\ncropping capabilities, and project folder management.")
+        
+        dialog.set_authors(["Screenshot Crop Tool Contributors"])
+        
+        # Add keyboard shortcuts info
+        dialog.set_wrap_license(True)
+        
+        # Custom secondary text with usage info
+        usage_text = """
+Keyboard Shortcuts:
+• Enter - Save selected area
+• Escape - Cancel crop operation  
+• Ctrl+S - Save full capture without cropping
+• Escape (3x) - Force close if unresponsive
+
+Tips:
+• Use delay to capture menus and tooltips
+• Set project folder for batch screenshots
+• Click "Continue" after save for rapid workflow
+        """
+        
+        # Create a custom content area for additional info
+        content_area = dialog.get_content_area()
+        
+        expander = Gtk.Expander(label="Usage Tips & Shortcuts")
+        expander_label = Gtk.Label(label=usage_text)
+        expander_label.set_alignment(0, 0)
+        expander.add(expander_label)
+        content_area.pack_end(expander, False, False, 10)
+        
+        dialog.show_all()
+        dialog.run()
+        dialog.destroy()
     
     def on_browse_folder(self, widget):
         """Open folder selection dialog"""
