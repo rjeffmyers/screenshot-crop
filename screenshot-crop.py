@@ -47,7 +47,7 @@ class ScreenshotCropTool(Gtk.Window):
         # Info label
         info_label = Gtk.Label()
         info_label.set_markup(
-            "<i>Captures all monitors after delay,\n"
+            "<i>Captures selected monitor after delay,\n"
             "then lets you select the area to keep</i>"
         )
         vbox.pack_start(info_label, False, False, 0)
