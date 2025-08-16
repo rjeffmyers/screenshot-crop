@@ -1,0 +1,44 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv
+
+# Build directories
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Application specific
+*.png
+*.jpg
+*.jpeg
+!docs/*.png
+
+# Debian packages
+*.deb
+
+# Temporary files
+*.tmp
+*.bak
+*.log
+
+# Config (user-specific, not for repo)
+# Uncomment if you don't want to track user configs
+# .config/
